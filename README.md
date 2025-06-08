@@ -7,13 +7,10 @@ This project is a React web application developed as a solution to a frontend co
 
 
 🚀 Live Demo Link
-(It is recommended to deploy the project to Vercel or Netlify and place the link here)
-
 
 
 https://github.com/user-attachments/assets/b83d854e-e14b-4890-a359-25f381f14d8f
 
-(A short, engaging GIF showcasing the app's features—like filling out the form, toggling dark mode, or interacting with the data table—is highly recommended here)
 
 ✨ Main Features
 1. Smart & Dynamic Forms
