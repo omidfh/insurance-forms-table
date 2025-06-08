@@ -8,7 +8,7 @@ This is a React web application developed as a solution to a frontend coding ass
 
 ## 🚀 Live Demo
 
-[🔗 View Live Application]([[https://github.com/user-attachments/assets/b83d854e-e14b-4890-a359-25f381f14d8f](https://insurance-fors-table.netlify.app/](https://insurance-fors-table.netlify.app/)))
+[🔗 View Live Application](https://insurance-fors-table.netlify.app/)
 
 ---
 
