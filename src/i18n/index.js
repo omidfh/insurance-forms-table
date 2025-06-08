@@ -186,6 +186,9 @@ const resources = {
         },
       },
       table: {
+        paginationInfo: "Showing {{from}} to {{to}} of {{total}} entries",
+        show: "Show",
+        entries: "entries",
         searchPlaceholder: "Search submissions...",
         columnsButton: "Columns ({{count}})",
         columnVisibility: "Column Visibility",
@@ -427,6 +430,10 @@ const resources = {
         },
       },
       table: {
+        paginationInfo:
+          "{{total}} kayıttan {{from}} - {{to}} arası gösteriliyor",
+        show: "Göster",
+        entries: "kayıt",
         searchPlaceholder: "Başvurular içinde ara...",
         columnsButton: "Sütunlar ({{count}})",
         columnVisibility: "Sütun Görünürlüğü",

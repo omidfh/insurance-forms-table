@@ -1,5 +1,6 @@
 import { Flex, Group, Pagination, Paper, Select, Text } from "@mantine/core";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function PaginationSection({
   currentPage,
@@ -9,20 +10,27 @@ export default function PaginationSection({
   setCurrentPage,
   totalPages,
 }) {
+  const { t } = useTranslation();
+
+  const from = (currentPage - 1) * pageSize + 1;
+  const to = Math.min(currentPage * pageSize, filteredAndSortedRecords.length);
+
   return (
     <Paper p="md" shadow="sm" withBorder>
       <Flex justify="space-between" align="center" wrap="wrap" gap="md">
         {/* Left side - Records info and page size selector */}
         <Group spacing="md">
           <Text size="sm" color="dimmed">
-            Showing {(currentPage - 1) * pageSize + 1} to{" "}
-            {Math.min(currentPage * pageSize, filteredAndSortedRecords.length)}{" "}
-            of {filteredAndSortedRecords.length} entries
+            {t("table.paginationInfo", {
+              from,
+              to,
+              total: filteredAndSortedRecords.length,
+            })}
           </Text>
 
           <Group spacing="xs">
             <Text size="sm" color="dimmed">
-              Show
+              {t("table.show")}
             </Text>
             <Select
               value={pageSize.toString()}
@@ -40,7 +48,7 @@ export default function PaginationSection({
               w={70}
             />
             <Text size="sm" color="dimmed">
-              entries
+              {t("table.entries")}{" "}
             </Text>
           </Group>
         </Group>
