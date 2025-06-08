@@ -1,0 +1,56 @@
+{
+  "common": {
+    "submit": "Submit",
+    "loading": "Loading...",
+    "search": "Search",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close"
+  },
+  "form": {
+    "formRoute": "Form",
+    "title": "Insurance Application",
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidPhone": "Please enter a valid phone number",
+    "selectCountry": "Select Country",
+    "selectState": "Select State",
+    "noOptions": "No options",
+    "clearable": "Clear selection"
+  },
+  "table": {
+    "fullName": "Full Name",
+    "age": "Age",
+    "gender": "Gender",
+    "insuranceType": "Insurance Type",
+    "city": "City",
+    "noRecords": "No submissions found",
+    "noRecordsMatch": "No submissions match your search",
+    "dragHandle": "Drag to reorder",
+    "sortBy": "Sort by {{column}}",
+    "filterColumns": "Filter Columns",
+    "showAll": "Show All",
+    "hideAll": "Hide All"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "forms": "Forms",
+    "submissions": "Submissions",
+    "settings": "Settings"
+  },
+  "validation": {
+    "required": "{{field}} is required",
+    "email": "Please enter a valid email address",
+    "phone": "Please enter a valid phone number",
+    "minLength": "{{field}} must be at least {{min}} characters",
+    "maxLength": "{{field}} must be no more than {{max}} characters"
+  },
+  "toast": {
+    "success": "Operation completed successfully",
+    "error": "An error occurred",
+    "formSaved": "Form saved successfully",
+    "formSubmitted": "Form submitted successfully"
+  }
+}

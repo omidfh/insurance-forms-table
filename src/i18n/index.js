@@ -1,0 +1,478 @@
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import HttpApi from "i18next-http-backend";
+const resources = {
+  en: {
+    translation: {
+      common: {
+        tryAgain: "Try Again",
+        goHome: "Go to Home",
+        submit: "Submit",
+        loading: "Loading...",
+        search: "Search",
+        cancel: "Cancel",
+        save: "Save",
+        delete: "Delete",
+        edit: "Edit",
+        close: "Close",
+      },
+      error: {
+        title: "Oops! Something went wrong",
+        description:
+          "We're sorry, but something unexpected happened. Don't worry - your data is safe.",
+        footerNote:
+          "If this problem persists, please refresh the page or contact support.",
+      },
+      form: {
+        noOptions: "No options",
+        fields: {
+          state: "State",
+          country: "Country",
+          dob: "Date of Birth",
+          age: "Age",
+          gender: "Gender",
+          insuranceType: "Insurance Type",
+        },
+
+        formRoute: "Form",
+        title: "Insurance Application",
+        required: "This field is required",
+        invalidEmail: "Please enter a valid email address",
+        invalidPhone: "Please enter a valid phone number",
+        selectCountry: "Select Country",
+        selectState: "Select State",
+        clearable: "Clear selection",
+      },
+      options: {
+        Male: "Male",
+        Female: "Female",
+        Other: "Other",
+        Yes: "Yes",
+        No: "No",
+      },
+      header: {
+        languageSwitch: "Language switch",
+        toggleColorScheme: "Toggle color scheme",
+      },
+
+      formFields: {
+        first_name: "First Name",
+        last_name: "Last Name",
+        dob: "Date of Birth",
+        personal_info: "Personal Information",
+        address: "Address",
+        country: "Country",
+        state: "State",
+        city: "City",
+        health_info: "Health Information",
+        smoker: "Do you smoke?",
+        smoking_frequency: "How often do you smoke?",
+        home_owner: "Are you the homeowner?",
+        property_type: "Property Type",
+        home_value: "Estimated Home Value (USD)",
+        has_security_system: "Do you have a home security system?",
+        security_system_type: "Security System Type",
+        fire_safety: "Do you have fire safety measures?",
+        home_address: "Home Address",
+        street: "Street Address",
+        zip_code: "ZIP Code",
+        car_owner: "Are you the primary car owner?",
+        vehicle_info: "Vehicle Information",
+        car_make: "Car Make",
+        car_model: "Car Model",
+        car_year: "Year of Manufacture",
+        car_usage: "How do you use your car?",
+        driving_record: "Driving Record",
+        accidents_last_5_years:
+          "Have you had any accidents in the last 5 years?",
+        accident_count: "How many accidents?",
+        license_suspensions: "Have you ever had your license suspended?",
+        insurance_history: "Previous Insurance Provider",
+        desired_coverage: "Desired Coverage Type",
+        roadside_assistance: "Do you want Roadside Assistance?",
+        insurance_coverage: "Coverage Type",
+      },
+      formOptions: {
+        gender: {
+          Male: "Male",
+          Female: "Female",
+          Other: "Other",
+        },
+        smoker: {
+          Yes: "Yes",
+          No: "No",
+        },
+        smoking_frequency: {
+          Occasionally: "Occasionally",
+          Daily: "Daily",
+          Heavy: "Heavy",
+        },
+        country: {
+          USA: "USA",
+          Canada: "Canada",
+          Germany: "Germany",
+          France: "France",
+        },
+        home_owner: {
+          Yes: "Yes",
+          No: "No",
+        },
+        property_type: {
+          House: "House",
+          Apartment: "Apartment",
+          Condo: "Condo",
+        },
+        has_security_system: {
+          Yes: "Yes",
+          No: "No",
+        },
+        security_system_type: {
+          Monitored: "Monitored",
+          Unmonitored: "Unmonitored",
+          "Smart Home System": "Smart Home System",
+        },
+        fire_safety: {
+          "Smoke Detectors": "Smoke Detectors",
+          "Fire Extinguishers": "Fire Extinguishers",
+          "Sprinkler System": "Sprinkler System",
+        },
+        car_owner: {
+          Yes: "Yes",
+          No: "No",
+        },
+        accidents_last_5_years: {
+          Yes: "Yes",
+          No: "No",
+        },
+        license_suspensions: {
+          Yes: "Yes",
+          No: "No",
+        },
+        insurance_history: {
+          None: "None",
+          "State Farm": "State Farm",
+          Geico: "Geico",
+          Progressive: "Progressive",
+          Allstate: "Allstate",
+        },
+        desired_coverage: {
+          "Liability Only": "Liability Only",
+          "Full Coverage": "Full Coverage",
+          Comprehensive: "Comprehensive",
+        },
+        roadside_assistance: {
+          Yes: "Yes",
+          No: "No",
+        },
+        insurance_coverage: {
+          Basic: "Basic",
+          Comprehensive: "Comprehensive",
+          Premium: "Premium",
+        },
+        car_usage: {
+          Personal: "Personal",
+          Commercial: "Commercial",
+          Rideshare: "Rideshare",
+        },
+      },
+      table: {
+        fullName: "Full Name",
+        age: "Age",
+        gender: "Gender",
+        insuranceType: "Insurance Type",
+        city: "City",
+        noRecords: "No submissions found",
+        noRecordsMatch: "No submissions match your search",
+        dragHandle: "Drag to reorder",
+        sortBy: "Sort by {{column}}",
+        filterColumns: "Filter Columns",
+        showAll: "Show All",
+        hideAll: "Hide All",
+        fullNameDescription: "Applicant's full name",
+        ageDescription: "Applicant's age",
+        genderDescription: "Applicant's gender",
+        insuranceTypeDescription: "Type of insurance coverage",
+        cityDescription: "Applicant's city of residence",
+      },
+      navigation: {
+        dashboard: "Dashboard",
+        forms: "Forms",
+        submissions: "Submissions",
+        settings: "Settings",
+      },
+      validation: {
+        required: "{{field}} is required",
+        email: "Please enter a valid email address",
+        phone: "Please enter a valid phone number",
+        minLength: "{{field}} must be at least {{length}} characters",
+        onlyLetters: "{{field}} should only contain letters",
+        invalidDob: "Please enter a valid date of birth",
+      },
+
+      toast: {
+        formSubmitSuccess: "Your form was submitted successfully!",
+        formSubmitError:
+          "Your form could not be submitted at the moment, but don't worry, your data remains safe.",
+        success: "Operation completed successfully",
+        error: "An error occurred",
+        formSaved: "Form saved successfully",
+        formSubmitted: "Form submitted successfully",
+        itemMoved: "{{name}} moved from position {{from}} to {{to}}",
+      },
+    },
+  },
+
+  tr: {
+    translation: {
+      common: {
+        tryAgain: "Tekrar Dene",
+        goHome: "Ana Sayfaya Git",
+        submit: "Gönder",
+        loading: "Yükleniyor...",
+        search: "Ara",
+        cancel: "İptal",
+        save: "Kaydet",
+        delete: "Sil",
+        edit: "Düzenle",
+        close: "Kapat",
+      },
+      error: {
+        title: "Hata! Bir şeyler ters gitti",
+        description:
+          "Üzgünüz, beklenmeyen bir hata oluştu. Endişelenmeyin - verileriniz güvende.",
+        footerNote:
+          "Bu sorun devam ederse, sayfayı yenileyin veya destek ile iletişime geçin.",
+      },
+      form: {
+        noOptions: "Seçenek yok",
+        fields: {
+          state: "Eyalet",
+          country: "Ülke",
+          dob: "Doğum Tarihi",
+          age: "Yaş",
+          gender: "Cinsiyet",
+          insuranceType: "Sigorta Türü",
+        },
+        formRoute: "Form",
+        title: "Sigorta Başvurusu",
+        required: "Bu alan zorunludur",
+        invalidEmail: "Lütfen geçerli bir e-posta adresi girin",
+        invalidPhone: "Lütfen geçerli bir telefon numarası girin",
+        selectCountry: "Ülke Seçin",
+        selectState: "Eyalet Seçin",
+        clearable: "Seçimi Temizle",
+      },
+      options: {
+        Male: "Erkek",
+        Female: "Kadın",
+        Other: "Diğer",
+        Yes: "Evet",
+        No: "Hayır",
+      },
+      header: {
+        languageSwitch: "Dil değiştir",
+        toggleColorScheme: "Renk şemasını değiştir",
+      },
+      formFields: {
+        first_name: "Ad",
+        last_name: "Soyad",
+        dob: "Doğum Tarihi",
+        personal_info: "Kişisel Bilgiler",
+        address: "Adres",
+        country: "Ülke",
+        state: "Eyalet",
+        city: "Şehir",
+        health_info: "Sağlık Bilgileri",
+        smoker: "Sigara kullanıyor musunuz?",
+        smoking_frequency: "Sigara kullanım sıklığınız nedir?",
+        home_owner: "Ev sahibi misiniz?",
+        property_type: "Mülk Türü",
+        home_value: "Tahmini Ev Değeri (USD)",
+        has_security_system: "Güvenlik sisteminiz var mı?",
+        security_system_type: "Güvenlik Sistemi Türü",
+        fire_safety: "Yangın güvenliği önlemleriniz var mı?",
+        home_address: "Ev Adresi",
+        street: "Sokak Adresi",
+        zip_code: "Posta Kodu",
+        car_owner: "Ana araç sahibi misiniz?",
+        vehicle_info: "Araç Bilgileri",
+        car_make: "Araç Markası",
+        car_model: "Araç Modeli",
+        car_year: "Üretim Yılı",
+        car_usage: "Aracı nasıl kullanıyorsunuz?",
+        driving_record: "Sürüş Geçmişi",
+        accidents_last_5_years: "Son 5 yılda kaza yaptınız mı?",
+        accident_count: "Kaç kaza yaptınız?",
+        license_suspensions: "Ehliyetiniz askıya alındı mı?",
+        insurance_history: "Önceki Sigorta Sağlayıcı",
+        desired_coverage: "İstenen Kapsam Türü",
+        roadside_assistance: "Yol Yardımı ister misiniz?",
+        insurance_coverage: "Kapsam Türü",
+      },
+      formOptions: {
+        gender: {
+          Male: "Erkek",
+          Female: "Kadın",
+          Other: "Diğer",
+        },
+        smoker: {
+          Yes: "Evet",
+          No: "Hayır",
+        },
+        smoking_frequency: {
+          Occasionally: "Ara sıra",
+          Daily: "Günlük",
+          Heavy: "Yoğun",
+        },
+        country: {
+          USA: "ABD",
+          Canada: "Kanada",
+          Germany: "Almanya",
+          France: "Fransa",
+        },
+        home_owner: {
+          Yes: "Evet",
+          No: "Hayır",
+        },
+        property_type: {
+          House: "Ev",
+          Apartment: "Daire",
+          Condo: "Konut",
+        },
+        has_security_system: {
+          Yes: "Evet",
+          No: "Hayır",
+        },
+        security_system_type: {
+          Monitored: "Gözetimli",
+          Unmonitored: "Gözetimsiz",
+          "Smart Home System": "Akıllı Ev Sistemi",
+        },
+        fire_safety: {
+          "Smoke Detectors": "Duman Dedektörleri",
+          "Fire Extinguishers": "Yangın Söndürücüler",
+          "Sprinkler System": "Sprinkler Sistemi",
+        },
+        car_owner: {
+          Yes: "Evet",
+          No: "Hayır",
+        },
+        accidents_last_5_years: {
+          Yes: "Evet",
+          No: "Hayır",
+        },
+        license_suspensions: {
+          Yes: "Evet",
+          No: "Hayır",
+        },
+        insurance_history: {
+          None: "Yok",
+          "State Farm": "State Farm",
+          Geico: "Geico",
+          Progressive: "Progressive",
+          Allstate: "Allstate",
+        },
+        desired_coverage: {
+          "Liability Only": "Sadece Sorumluluk",
+          "Full Coverage": "Tam Kapsam",
+          Comprehensive: "Kapsamlı",
+        },
+        roadside_assistance: {
+          Yes: "Evet",
+          No: "Hayır",
+        },
+        insurance_coverage: {
+          Basic: "Temel",
+          Comprehensive: "Kapsamlı",
+          Premium: "Premium",
+        },
+        car_usage: {
+          Personal: "Kişisel",
+          Commercial: "Ticari",
+          Rideshare: "Araç Paylaşımı",
+        },
+      },
+      table: {
+        fullName: "Tam Adı",
+        age: "Yaş",
+        gender: "Cinsiyet",
+        insuranceType: "Sigorta Türü",
+        city: "Şehir",
+        noRecords: "Gönderim bulunamadı",
+        noRecordsMatch: "Aramanızla eşleşen gönderim yok",
+        dragHandle: "Yeniden sıralamak için sürükleyin",
+        sortBy: "{{column}} sütununa göre sırala",
+        filterColumns: "Sütunları Filtrele",
+        showAll: "Hepsini Göster",
+        hideAll: "Hepsini Gizle",
+        fullNameDescription: "Başvuranın tam adı",
+        ageDescription: "Başvuranın yaşı",
+        genderDescription: "Başvuranın cinsiyeti",
+        insuranceTypeDescription: "Sigorta kapsam türü",
+        cityDescription: "Başvuranın ikamet ettiği şehir",
+      },
+      navigation: {
+        dashboard: "Panel",
+        forms: "Formlar",
+        submissions: "Gönderimler",
+        settings: "Ayarlar",
+      },
+      validation: {
+        required: "{{field}} zorunludur",
+        email: "Lütfen geçerli bir e-posta adresi girin",
+        phone: "Lütfen geçerli bir telefon numarası girin",
+        minLength: "{{field}} en az {{length}} karakter olmalıdır",
+        onlyLetters: "{{field}} sadece harf içermelidir",
+        invalidDob: "Lütfen geçerli bir doğum tarihi girin",
+      },
+      toast: {
+        formSubmitSuccess: "Formunuz başarıyla gönderildi!",
+        formSubmitError:
+          "Formunuz şu anda gönderilemedi, ancak endişelenmeyin, verileriniz güvende.",
+        success: "İşlem başarıyla tamamlandı",
+        error: "Bir hata oluştu",
+        formSaved: "Form başarıyla kaydedildi",
+        formSubmitted: "Form başarıyla gönderildi",
+        itemMoved: "{{name}}, {{from}} konumundan {{to}} konumuna taşındı",
+      },
+    },
+  },
+};
+
+const i18nInstance = i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources,
+    lng: "en",
+    fallbackLng: "en",
+    // eslint-disable-next-line no-undef
+    debug: process.env.NODE_ENV === "development",
+
+    interpolation: {
+      escapeValue: false,
+    },
+
+    detection: {
+      order: ["localStorage", "navigator", "htmlTag"],
+      caches: ["localStorage"],
+    },
+
+    // Add these options to improve re-rendering
+    react: {
+      useSuspense: false,
+      bindI18n: "languageChanged",
+      bindI18nStore: "added",
+      transEmptyNodeValue: "",
+      transSupportBasicHtmlNodes: true,
+      transKeepBasicHtmlNodesFor: ["br", "strong", "i"],
+    },
+
+    // Ensure immediate updates
+    saveMissing: false,
+    updateMissing: false,
+    missingKeyHandler: false,
+  });
+
+export default i18nInstance;

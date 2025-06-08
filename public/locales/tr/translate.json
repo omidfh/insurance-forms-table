@@ -1,0 +1,55 @@
+{
+  "common": {
+    "submit": "Gönder",
+    "loading": "Yükleniyor...",
+    "search": "Ara",
+    "cancel": "İptal",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "close": "Kapat"
+  },
+  "form": {
+    "title": "Sigorta Başvurusu",
+    "required": "Bu alan zorunludur",
+    "invalidEmail": "Lütfen geçerli bir e-posta adresi girin",
+    "invalidPhone": "Lütfen geçerli bir telefon numarası girin",
+    "selectCountry": "Ülke Seçin",
+    "selectState": "Eyalet Seçin",
+    "noOptions": "Seçenek yok",
+    "clearable": "Seçimi temizle"
+  },
+  "table": {
+    "fullName": "Tam Adı",
+    "age": "Yaş",
+    "gender": "Cinsiyet",
+    "insuranceType": "Sigorta Türü",
+    "city": "Şehir",
+    "noRecords": "Başvuru bulunamadı",
+    "noRecordsMatch": "Aramanızla eşleşen başvuru yok",
+    "dragHandle": "Yeniden sıralamak için sürükle",
+    "sortBy": "{{column}} sütununa göre sırala",
+    "filterColumns": "Sütunları Filtrele",
+    "showAll": "Tümünü Göster",
+    "hideAll": "Tümünü Gizle"
+  },
+  "navigation": {
+    "dashboard": "Gösterge Paneli",
+    "forms": "Formlar",
+    "submissions": "Başvurular",
+    "settings": "Ayarlar"
+  },
+  "validation": {
+    "required": "{{field}} alanı zorunludur",
+    "email": "Lütfen geçerli bir e-posta adresi girin",
+    "phone": "Lütfen geçerli bir telefon numarası girin",
+    "minLength": "{{field}} en az {{min}} karakter olmalıdır",
+    "maxLength": "{{field}} en fazla {{max}} karakter olmalıdır"
+  },
+  "toast": {
+    "success": "İşlem başarıyla tamamlandı",
+    "error": "Bir hata oluştu",
+    "formSaved": "Form başarıyla kaydedildi",
+    "formSubmitted": "Form başarıyla gönderildi"
+  }
+}
