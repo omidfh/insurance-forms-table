@@ -1,89 +1,109 @@
-Smart Insurance Application Portal
 
+markdown
+Copy
+Edit
+# 🧾 Smart Insurance Application Portal
 
-This project is a React web application developed as a solution to a frontend coding assignment. The primary goal is to provide a smart portal for applying for various types of insurance (e.g., Health, Home, Auto) through forms whose structures are dynamically fetched from an API. After submitting an application, users can view and manage their submissions in an advanced, feature-rich data table.
+This is a React web application developed as a solution to a frontend coding assignment. It serves as a smart portal for users to apply for various types of insurance (e.g., Health, Home, Car) via **fully dynamic, API-driven forms**, and to **manage submitted applications** in an advanced data table interface.
 
+---
 
+## 🚀 Live Demo
 
+[🔗 View Live Application]([https://github.com/user-attachments/assets/b83d854e-e14b-4890-a359-25f381f14d8f](https://insurance-fors-table.netlify.app/))
 
-🚀 Live Demo Link
+---
 
+## ✨ Main Features
 
-https://github.com/user-attachments/assets/b83d854e-e14b-4890-a359-25f381f14d8f
+### 1. Smart & Dynamic Forms
+- **API-Driven Rendering**: Forms are built based on API responses — no hardcoded field structures.
+- **Conditional Logic**: Fields appear/disappear based on user input (e.g., *Pregnancy Status* shown only when *Gender = Female*).
+- **Nested Sections**: Supports grouped fields such as address blocks and vehicle details.
+- **Dynamic Options**: Select fields like *State* dynamically fetch options based on *Country* selection.
+- **Validation**: All fields are validated before submission.
 
+### 2. Customizable Submissions Table
+- **Column Selection**: Users can dynamically choose which columns to view.
+- **Sorting**: Sort submissions by any column.
+- **Filtering**: Global search across all fields.
+- **Pagination**: Efficient client-side pagination for better UX.
 
-✨ Main Features
-1. Smart & Dynamic Forms
-API-Driven Rendering: Form structures are fetched entirely from an API, with no hardcoded forms in the application.
+---
 
-Conditional Logic: Fields dynamically appear or disappear based on user input. For example, the "Pregnancy Status" field is only shown if the gender "Female" is selected.
+## ⭐ Bonus Features
+These features were added beyond the assignment requirements:
 
+- **Autosave Drafts**: Form data is saved in `localStorage` to prevent data loss.
+- **Dark Mode**: Includes a toggle to switch between light and dark themes.
+- **Localization (i18n)**: Supports multiple languages (English & Turkish).
+- **Drag & Drop Row Reordering**: Users can reorder submission rows using drag-and-drop.
 
-Nested Sections: The forms support nested field structures, such as for an address or vehicle details.
-Dynamic Option Fetching: Certain fields, like a "State" selector, dynamically fetch their options from a separate API based on user input in another field, such as the selected "Country".
-Validation: All user-submitted data is validated before being sent to the server.
-2. Customizable & Advanced Data Table
-Submissions View: All submitted applications are displayed in a comprehensive table.
-Column Selection: Users can dynamically select which columns are visible in the table.
-Sorting: Data can be sorted by various columns.
+---
 
-Filtering: A global search function allows for quick filtering of all submissions.
-Pagination: Data is handled efficiently with client-side pagination.
-⭐ Bonus Features
-In addition to the core requirements, the following features were implemented to enhance the user experience:
+## 🧰 Tech Stack
 
-Autosave Drafts: User progress on a form is automatically saved to localStorage, preventing data loss if the browser is closed unexpectedly.
-Dark Mode: The application includes a theme toggler to switch between light and dark modes.
-Localization (i18n): The application supports multiple languages (English and Turkish), allowing users to switch locales on the fly.
-Drag & Drop Row Reordering: Users can reorder the rows in the submissions table via drag-and-drop, which was implemented as a powerful alternative to the "drag-and-drop field reordering" suggestion.
-🚀 Tech Stack
-Framework: React.js
-UI Library: Mantine UI
-Server State Management: TanStack Query (React Query)
-Routing: React Router DOM
-Form Management: Mantine Form
-Data Table: Mantine DataTable
-Drag & Drop: @hello-pangea/dnd
-Internationalization (i18n): i18next & react-i18next
-⚙️ Setup Instructions
-To run this project locally, follow these steps:
+| Purpose                 | Technology                 |
+|------------------------|----------------------------|
+| Frontend Framework     | React.js                   |
+| UI Components          | Mantine UI v7              |
+| Form Handling          | @mantine/form              |
+| Routing                | React Router DOM           |
+| Server State           | React Query (TanStack)     |
+| Data Table             | mantine-datatable          |
+| Drag & Drop            | @hello-pangea/dnd          |
+| i18n                   | i18next, react-i18next     |
 
-Clone the repository:
+---
 
-Bash
+## ⚙️ Setup Instructions
 
+1. **Clone the repo**  
+```bash
 git clone https://github.com/omidfh/insurance-forms-table
-cd project-directory
-Install dependencies:
+cd insurance-forms-table
+Install dependencies
 
-Code snippet
-
+bash
+Copy
+Edit
 npm install
-Run the project:
+Run the app locally
 
-Bash
-
+bash
+Copy
+Edit
 npm run dev
-The application will be available at http://localhost:5173.
+App will run at: http://localhost:5173
 
 🔌 API Usage
-This project interacts with the following API endpoints.
-Base URL: https://assignment.devotel.io 
+Base URL: https://assignment.devotel.io
 
 Method	Endpoint	Description
-GET	/api/insurance/forms	Fetches the dynamic structure for insurance forms.
-POST	/api/insurance/forms/submit	Submits the filled-out form data to the server.
-GET	/api/insurance/forms/submissions	Fetches the list of all submitted applications.
+GET	/api/insurance/forms	Fetch dynamic form structures
+POST	/api/insurance/forms/submit	Submit filled form data
+GET	/api/insurance/forms/submissions	Fetch list of submitted applications
+GET	/api/getStates?country=...	Fetch states based on selected country
+
+📝 Assumptions & Development Decisions
+UI Library: Mantine was chosen for its complete component set, form support, and theme customizability.
+
+Client-Side Logic: All filtering, sorting, and pagination are done on the client side for responsiveness.
+
+Drag & Drop: Instead of reordering form fields, drag-and-drop was implemented for reordering submissions.
+
+State Management: React Query (TanStack) was used for API data, caching, and background refetching.
+
+📌 Notes
+✅ All features were implemented except for testing (unit/integration).
+
+🧪 Testing setup (Jest + RTL) can be added as next step.
+
+👤 Author
+Omid Farhang
 
 
 
-
-Export to Sheets
-📝 Assumptions and Decisions
-During development, the following assumptions and decisions were made:
-
-UI Library Choice: Mantine UI was chosen for its rich component library, powerful hooks (like useForm), and built-in support for theming and dark mode.
-Client-Side Operations: To create a responsive and fast user experience, table operations such as sorting, filtering, and pagination were implemented on the client side. This reduces unnecessary API calls for data manipulation.
-Drag & Drop Implementation: The "drag-and-drop" bonus feature was implemented for reordering table rows instead of form fields, as this provides more practical value for managing a list of submissions.
-State Management: TanStack Query was used for server state management due to its advanced capabilities for caching, refetching, and optimizing data-fetching operations.
+📧 fhomid2@gmail.com
+🐙 github.com/omidfh
 
