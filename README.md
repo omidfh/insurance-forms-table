@@ -1,7 +1,5 @@
 
-markdown
-Copy
-Edit
+
 # 🧾 Smart Insurance Application Portal
 
 This is a React web application developed as a solution to a frontend coding assignment. It serves as a smart portal for users to apply for various types of insurance (e.g., Health, Home, Car) via **fully dynamic, API-driven forms**, and to **manage submitted applications** in an advanced data table interface.
@@ -94,10 +92,7 @@ Drag & Drop: Instead of reordering form fields, drag-and-drop was implemented fo
 
 State Management: React Query (TanStack) was used for API data, caching, and background refetching.
 
-📌 Notes
-✅ All features were implemented except for testing (unit/integration).
 
-🧪 Testing setup (Jest + RTL) can be added as next step.
 
 👤 Author
 Omid Farhang
