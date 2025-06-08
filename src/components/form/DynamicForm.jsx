@@ -70,11 +70,14 @@ export default function DynamicForm({ form }) {
             {t("form.title", { defaultValue: form.title })}
           </Title>
         </Center>
-        {form.fields.map((field) =>
-          field.type === "group" ? (
+        {form.fields.map((field) => {
+          console.log(field.label);
+          return field.type === "group" ? (
             <React.Fragment key={field.id}>
               <Stack key={field.id} p={5} gap={"md"}>
-                <Title order={5}>{t(field.label)}</Title>
+                <Title order={5}>
+                  {t(`formFields.${field.id}`, field.label)}
+                </Title>
                 {field.fields.map((subField) =>
                   RenderField(subField, isVisible, mantineForm)
                 )}
@@ -82,8 +85,8 @@ export default function DynamicForm({ form }) {
             </React.Fragment>
           ) : (
             RenderField(field, isVisible, mantineForm)
-          )
-        )}
+          );
+        })}
         {isLoading ? (
           <Loader type={"dots"} color="indigo" />
         ) : (

@@ -1,11 +1,13 @@
 import { TextInput } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function TableSearch({ query, setQuery }) {
+  const { t } = useTranslation();
   return (
     <TextInput
-      placeholder="Search submissions..."
+      placeholder={t("table.searchPlaceholder")}
       rightSection={<IconSearch size={16} />}
       value={query}
       onChange={(e) => setQuery(e.target.value)}

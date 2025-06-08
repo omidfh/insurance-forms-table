@@ -32,7 +32,7 @@ export const RenderField = (field, isVisible, mantineForm) => {
 
   const commonProps = {
     key: field.id,
-    label: t(`form.fields.${field.id}`, field.label),
+    label: t(`formFields.${field.id}`, field.label),
     required: field.required,
     ...mantineForm.getInputProps(field.id),
   };

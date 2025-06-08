@@ -53,7 +53,7 @@ export default function InsuranceForm() {
                   },
                 }}
               >
-                {t(`forms.${form.formId}.title`, { defaultValue: form.title })}
+                {t(`formTitles.${form.formId}`, { defaultValue: form.title })}
               </Tabs.Tab>
             ))}
           </Tabs.List>

@@ -17,6 +17,7 @@ import {
   IconUser,
 } from "@tabler/icons-react";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function TablePopover({
   visibleColumnsCount,
@@ -25,6 +26,7 @@ export default function TablePopover({
   toggleColumnVisibility,
 }) {
   const [columnPopoverOpened, setColumnPopoverOpened] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <Popover
@@ -42,21 +44,21 @@ export default function TablePopover({
           onClick={() => setColumnPopoverOpened((o) => !o)}
           size="md"
         >
-          Columns ({visibleColumnsCount})
+          {t("table.columnsButton", { count: visibleColumnsCount })}
         </Button>
       </Popover.Target>
       <Popover.Dropdown>
         <Stack spacing="xs">
           <Group position="apart">
             <Text weight={500} size="sm">
-              Column Visibility
+              {t("table.columnVisibility")}
             </Text>
             <Group spacing="xs">
               <ActionIcon
                 size="sm"
                 variant="subtle"
                 onClick={() => toggleAllColumns(true)}
-                title="Show all columns"
+                title={t("table.showAllColumns")}
               >
                 <IconEye size={14} />
               </ActionIcon>
@@ -64,7 +66,7 @@ export default function TablePopover({
                 size="sm"
                 variant="subtle"
                 onClick={() => toggleAllColumns(false)}
-                title="Hide all columns"
+                title={t("table.hideAllColumns")}
               >
                 <IconEyeOff size={14} />
               </ActionIcon>
@@ -80,7 +82,8 @@ export default function TablePopover({
                 {columnKey === "Age" && <IconCalendar size={14} />}
                 {columnKey === "Insurance Type" && <IconShield size={14} />}
                 {columnKey === "City" && <IconMapPin size={14} />}
-                <Text size="sm">{columnKey}</Text>
+                {t(`table.${columnKey.replaceAll(" ", "").toLowerCase()}`) ||
+                  columnKey}
               </Group>
               <ActionIcon
                 size="sm"
@@ -95,7 +98,7 @@ export default function TablePopover({
 
           <Divider />
           <Text size="xs" color="dimmed" ta="center">
-            Click the eye icons to show/hide columns
+            {t("table.columnToggleHint")}
           </Text>
         </Stack>
       </Popover.Dropdown>

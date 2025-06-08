@@ -1,5 +1,6 @@
 import { Text, Title } from "@mantine/core";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function HeaderLeftSection({
   filteredAndSortedRecords,
@@ -10,18 +11,24 @@ export default function HeaderLeftSection({
   totalPages,
   sortStatus,
 }) {
+  const { t } = useTranslation();
   return (
     <div>
       <Title order={2} color="brand.6" mb="xs">
-        Submission Records
+        {t("table.submissionRecords")}
       </Title>
-      <Text color={"dimmed"} size="sm">
-        {filteredAndSortedRecords.length} of {records.length} records •
-        {visibleColumnsCount} of {Object.keys(columnVisibility).length} columns
-        shown • Page {currentPage} of {totalPages}
+      <Text color="dimmed" size="sm">
+        {filteredAndSortedRecords.length} {t("table.of")} {records.length}{" "}
+        {t("table.records")} • {visibleColumnsCount} {t("table.of")}{" "}
+        {Object.keys(columnVisibility).length} {t("table.columnsShown")} •{" "}
+        {t("table.page")} {currentPage} {t("table.of")} {totalPages}
         {sortStatus.columnAccessor && (
           <Text component="span" color="brand.6" ml="xs">
-            • Sorted by {sortStatus.columnAccessor} ({sortStatus.direction})
+            •{" "}
+            {t("table.sortedBy", {
+              column: sortStatus.columnAccessor,
+              direction: sortStatus.direction,
+            })}
           </Text>
         )}
       </Text>
