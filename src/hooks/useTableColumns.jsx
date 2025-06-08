@@ -74,15 +74,7 @@ export function GetColumns(onSort, sortStatus, columnVisibility = {}) {
 
         textAlignment: "center",
         width: "15%",
-        render: ({ Age }) => (
-          <Badge
-            variant="light"
-            color={Age < 25 ? "green" : Age < 50 ? "blue" : "orange"}
-            size="lg"
-          >
-            {Age}
-          </Badge>
-        ),
+        render: ({ Age }) => <Text variant="light">{Age}</Text>,
       },
       {
         accessor: "Gender",
@@ -96,6 +88,7 @@ export function GetColumns(onSort, sortStatus, columnVisibility = {}) {
         render: ({ Gender }) => (
           <Badge
             variant="outline"
+            size={"sm"}
             color={
               Gender === "Male" ? "blue" : Gender === "Female" ? "pink" : "gray"
             }

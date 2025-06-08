@@ -233,7 +233,7 @@ const resources = {
         phone: "Please enter a valid phone number",
         minLength: "{{field}} must be at least {{length}} characters",
         onlyLetters: "{{field}} should only contain letters",
-        invalidDob: "Please enter a valid date of birth",
+        invalidDob: "Please enter a valid date of birth (18 - 120)",
       },
       toast: {
         formSubmitSuccess: "Your form was submitted successfully!",
@@ -479,7 +479,7 @@ const resources = {
         phone: "Lütfen geçerli bir telefon numarası girin",
         minLength: "{{field}} en az {{length}} karakter olmalıdır",
         onlyLetters: "{{field}} sadece harf içermelidir",
-        invalidDob: "Lütfen geçerli bir doğum tarihi girin",
+        invalidDob: "Lütfen geçerli bir doğum tarihi girin (18 - 120)",
       },
       toast: {
         formSubmitSuccess: "Formunuz başarıyla gönderildi!",
