@@ -95,7 +95,7 @@ State Management: React Query (TanStack) was used for API data, caching, and bac
 
 
 👤 Author
-Omid Farhang
+Omid Faghihi
 
 
 
