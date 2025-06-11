@@ -19,21 +19,17 @@ export async function getDynamicForm() {
 }
 
 export async function getDynamicStateByCountry(country) {
-  let region = { country: country };
-  if (country === "USA") region = { country: "United States" };
-
   countries.registerLocale(enLocale);
 
-  const url = `https://countriesnow.space/api/v0.1/countries/states`;
+  // const url = `https://countriesnow.space/api/v0.1/countries/states`;
 
   try {
-    const res = await fetch(url);
+    const res = await fetch(`${baseUrl}/api/getStates?country=${country}`);
 
     if (!res.ok) throw new Error("Failed to fetch");
 
     const data = await res.json();
-    return data?.data?.filter((items) => items.name === region.country)?.[0]
-      ?.states;
+    return data?.states;
   } catch (err) {
     console.error(err);
     throw new Error("State list could not be fetched, try again later.");

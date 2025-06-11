@@ -38,8 +38,8 @@ export const RenderField = (field, isVisible, mantineForm) => {
   };
   function fetchedSates(states) {
     return states?.map((item) => ({
-      label: item.name,
-      value: item.name,
+      label: item,
+      value: item,
     }));
   }
 

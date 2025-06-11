@@ -21,6 +21,10 @@ export const getClientSideValidation = (field) => {
           if (!/^[a-zA-Z\s'-]+$/.test(value)) {
             return i18next.t("validation.onlyLetters", { field: field.label });
           }
+        } else if (field.id === "zip_code") {
+          if (!/^\d{5}$/.test(value)) {
+            return i18next.t("validation.zipCode", { field: field.label });
+          }
         }
         break;
       //validation for date
