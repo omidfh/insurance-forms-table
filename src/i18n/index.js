@@ -235,6 +235,8 @@ const resources = {
         onlyLetters: "{{field}} should only contain letters",
         invalidDob: "Please enter a valid date of birth (18 - 120)",
         zipCode: "Please enter a valid Zip Code ",
+        invalidCarYear: "Please enter a valid number of car year",
+        invalidHomeValue: "Please enter a valid number of home value",
       },
       toast: {
         formSubmitSuccess: "Your form was submitted successfully!",
@@ -482,6 +484,8 @@ const resources = {
         onlyLetters: "{{field}} sadece harf içermelidir",
         invalidDob: "Lütfen geçerli bir doğum tarihi girin (18 - 120)",
         zipCode: "Lütfen geçerli bir posta kodu tarihi girin",
+        invalidCarYear: "Lütfen geçerli bir araba yaşı girin",
+        invalidHomeValue: "Lütfen geçerli bir ev değeri girin",
       },
       toast: {
         formSubmitSuccess: "Formunuz başarıyla gönderildi!",

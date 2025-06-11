@@ -39,6 +39,18 @@ export const getClientSideValidation = (field) => {
           }
         }
         break;
+      case "number":
+        if (field.id === "car_year") {
+          if (value < 1990 || value > 2025) {
+            return i18next.t("validation.invalidCarYear");
+          }
+        }
+        if (field.id === "home_value") {
+          if (value < 50000 || value > 5000000) {
+            return i18next.t("validation.invalidHomeValue");
+          }
+        }
+        break;
     }
 
     return null;
